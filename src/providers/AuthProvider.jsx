@@ -52,14 +52,14 @@ class AuthProvider extends Component {
     }
   }
 
-  login = async ({ username, password }) => {
+  login = async ({ email, password }) => {
 
     try {
       this.setState({
         status: 'loading',
         user: null,
       })
-      const user = await apiClient.login({ username, password })
+      const user = await apiClient.login({ email, password })
       this.setState({
         status: 'loggedIn',
         user,
@@ -73,13 +73,13 @@ class AuthProvider extends Component {
     }
   }
 
-  signup = async ({ username, password }) => {
+  signup = async ({ name, email, password }) => {
     try {
       this.setState({
         status: 'loading',
         user: null,
       })
-      const user = await apiClient.signup({ username, password })
+      const user = await apiClient.signup({ name, email, password })
       console.log(user)
       this.setState({
         status: 'loggedIn',
