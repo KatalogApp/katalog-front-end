@@ -25,6 +25,7 @@ class MyComponent extends Component {
     } catch(error){
         console.log(error)
     }
+  }
 
   render() {
     // And then I paint it regularly or with a map

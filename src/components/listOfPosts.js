@@ -29,6 +29,7 @@ class listOfPosts extends Component {
     } catch(error){
         console.log(error)
     }
+  }
 
     render() {
         const { post } = this.state;
