@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class postClient {
+class PostClient {
 	constructor() {
 		this.postClient = axios.create({
 			baseURL: process.env.REACT_APP_API_URI,
@@ -29,6 +29,6 @@ class postClient {
   }
 }
 
-const postClient = new postClient();
+const postClient = new PostClient();
 
 export default postClient;

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React , { Component } from 'react';
 import { Link } from 'react-router-dom';
 import postClient from '../lib/postClient';
+
 //import PostCard from './postCard';
 
 class listOfPosts extends Component {
@@ -13,27 +14,41 @@ class listOfPosts extends Component {
       creator: "",
       theme: "",
       date: "",
-
+      posts: []
     };
   }
 
   async componentDidMount(){
+
     // When I have to fetch data from the API
+
     try {
+
         // first I get it
+
         const posts = await postClient.getPosts();
+
         // then I upload it to the state to be able to render it
+
         this.setState({
             posts: posts
         })
+        console.log(posts)
     } catch(error){
         console.log(error)
     }
   }
+}
 
-    render() {
+  
+   /* render() {
         const { post } = this.state;
-        return (        
+        return (    
+          
+
+
+          export default listOfPosts;
+          
             <div className="card">
                 <div>
                     title : 
@@ -68,17 +83,15 @@ class listOfPosts extends Component {
 
 
 
-  // render(){
-  //   // And then I paint it regularly or with a map
-  //   return (
-  //   <ul>
-  //     {posts.map(item => (
-  //       <li key={item.id}>
-  //         <PostCard title={item.title} description={item.description} />
-  //       </li>
-  //     ))}
-  //   </ul>
+   render(){
+  //And then I paint it regularly or with a map
+    return (
+    <ul>
+      {posts.map(item => (
+     <li key={item.id}>
+        <PostCard post={item} title={item.title} description={item.description} />
+     </li>
+     ))}
+   </ul>*/
 
-
-
-export default listOfPosts;
+   export default listOfPosts;

@@ -2,6 +2,7 @@ import React from "react";
 import listOfPosts from "./listOfPosts";
  
 const PostCard = ({title, date, description, keywords, theme, creator  }) => {
+  // this.props.post
   return (
     <div>
       <h2>{title}</h2>
