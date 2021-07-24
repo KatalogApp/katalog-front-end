@@ -1,8 +1,8 @@
-import React , { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
 import postClient from '../lib/postClient';
 
-//import PostCard from './postCard';
+import PostCard from './postCard';
 
 class listOfPosts extends Component {
   constructor(props){
@@ -38,17 +38,11 @@ class listOfPosts extends Component {
         console.log(error)
     }
   }
-}
 
-  
-   /* render() {
+  /*
+   render() {
         const { post } = this.state;
         return (    
-          
-
-
-          export default listOfPosts;
-          
             <div className="card">
                 <div>
                     title : 
@@ -79,19 +73,23 @@ class listOfPosts extends Component {
             </div>
         )
     }
-}
+    */
+  
 
-
-
-   render(){
-  //And then I paint it regularly or with a map
+   
+   render() {
+  // And then I paint it regularly or with a map
+  // eslint-disable-next-line no-unused-vars
+  const posts = this.posts;
     return (
     <ul>
       {posts.map(item => (
-     <li key={item.id}>
-        <PostCard post={item} title={item.title} description={item.description} />
-     </li>
-     ))}
-   </ul>*/
+      <li key={item.id}>
+          <PostCard post={item} title={item.title} description={item.description} />
+      </li>))}
+     </ul>
+    )
+  }
+}
 
    export default listOfPosts;

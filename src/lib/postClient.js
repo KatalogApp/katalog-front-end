@@ -18,13 +18,13 @@ class PostClient {
 	}
 
 	editPost(body) {
-    const { title, date, description, keywords, theme, creator} = body;
-		return this.postClient.post(`/user-profile/${id}/edit`, {title, date, description, keywords, theme, creator}).then(response => response.data);
+    const { title, date, description, keywords, theme, creator, id} = body;
+		return this.postClient.post(`/user-profile/${id}/edit`, {title, date, description, keywords, theme, creator, id}).then(response => response.data);
 	}
 
   deletePost(body){
-    const { title, date, description, keywords, theme, creator} = body;
-		return this.postClient.delete(`/user-profile/${id}/delete`, {title, date, description, keywords, theme, creator}).then(response => response.data);
+    const { title, date, description, keywords, theme, creator, id} = body;
+		return this.postClient.delete(`/user-profile/${id}/delete`, {title, date, description, keywords, theme, creator, id}).then(response => response.data);
 
   }
 }
