@@ -9,7 +9,7 @@ class ApiClient {
 	}
 
 	me() {
-		return this.apiClient.get('/whoami').then(response => response.data);
+		return this.apiClient.get('/user-profile').then(response => response.data);
 	}
 
 	signup(user) {

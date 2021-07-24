@@ -8,6 +8,7 @@ import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { withAuth } from './providers/AuthProvider';
+import listOfPosts from './components/listOfPosts';
 
 class App extends Component {
 	render() {
@@ -23,6 +24,7 @@ class App extends Component {
 					<AnonRoute path="/signup" component={Signup} />
 					<AnonRoute path="/login" component={Login} />
 					<PrivateRoute path="/private" component={Private} />
+					<PrivateRoute path ="/posts" component={listOfPosts}/>
 				</Switch>
 			</div>
 		);
