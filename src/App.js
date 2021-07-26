@@ -9,6 +9,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { withAuth } from './providers/AuthProvider';
 import listOfPosts from './components/listOfPosts';
+import SinglePost from './components/SinglePost';
+import CreatePost from './components/CreatePost';
 
 class App extends Component {
 	render() {
@@ -24,6 +26,8 @@ class App extends Component {
 					<AnonRoute path="/signup" component={Signup} />
 					<AnonRoute path="/login" component={Login} />
 					<PrivateRoute path="/private" component={Private} />
+					<PrivateRoute path="/posts/new" component={CreatePost}/>
+					<PrivateRoute path ="/user-profile/posts/:postId" component={SinglePost}/>
 					<PrivateRoute path ="/user-profile" component={listOfPosts}/>
 				</Switch>
 			</div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// eslint-disable-next-line no-unused-vars
-import listOfPosts from "./listOfPosts";
+import { Link } from 'react-router-dom';
 
 class PostCard extends Component { 
 // const PostCard = ({title, date, description, keywords, theme, creator  }) => {
@@ -15,6 +14,7 @@ render (props){
       </ul>
       <p>theme: {this.props.post.theme}</p>
       <p>creator: {this.props.post.creator}</p>
+      <Link to={`/user-profile/posts/${this.props.post._id}`}>See post</Link>
     </div>
   );
 }
