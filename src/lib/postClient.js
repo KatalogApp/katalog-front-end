@@ -29,12 +29,8 @@ class PostClient {
 		return this.postClient.post(`/user-profile/${id}/edit`, {title, date, description, keywords, theme, creator, id}).then(response => response.data);
 	}
 
-  deletePost(body){
-		// Here deletePost will have to bring both deletePost(body,id) so that you can pass the id to the backend params
-    const { title, date, description, keywords, theme, creator, id} = body;
-		// Right now this id is not coming from anywhere
-		return this.postClient.delete(`/user-profile/${id}/delete`, {title, date, description, keywords, theme, creator, id}).then(response => response.data);
-
+  deletePost(id){
+		return this.postClient.delete(`/user-profile/post/${id}/delete`).then(response => response.data);
   }
 }
 
