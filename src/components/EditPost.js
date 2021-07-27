@@ -26,7 +26,6 @@ class EditPost extends Component {
       title: "",
       description : "",
       theme: ""
-
     };
   }
 
@@ -35,7 +34,7 @@ class EditPost extends Component {
     // const {title, description, theme, keywords} = ; //
     try {
       // getPost(id)
-      const post = await postClient.getSinglePost({ postId});
+      const post = await postClient.getSinglePost( postId );
       this.setState({
        title: post.title,
        description: post.description,
@@ -43,6 +42,8 @@ class EditPost extends Component {
       })
     } catch(error) {
       console.log(error)
+    } finally {
+      console.log(this.state)
     }
   };
 
@@ -72,22 +73,21 @@ handleChange = event => {
     }
   }
 
-
-
 render (props){
-      // const { title, description, theme } = this.state;
+  const { title, description, theme} = this.state;
   return (
      <div>
+        <h2>EDIT POST</h2>
         <form onSubmit={this.handleSubmit}>
             <label>Title</label>
-            <input type="text" name="title" value= {this.props.post.title} onChange={this.handleChange}/>
+            <input type="text" name="title" value={title} onChange={this.handleChange}/>
             <label>Description</label>
-            <input type="text" name="description" value= {this.props.post.description} onChange={this.handleChange}/>
+            <input type="text" name="description" value={description} onChange={this.handleChange}/>
             <label>Theme</label>
-            <input type="text" name="theme" value = {this.props.post.theme} onChange={this.handleChange}/>
+            <input type="text" name="theme" value={theme} onChange={this.handleChange}/>
             <label>Keywords</label>
             <p>Add keywords separated by commas</p>
-            <input type="text" name="keywordsString" value= {this.props.post.keywords} onChange={this.handleChange}/>
+            <input type="text" name="keywordsString" value={this.keywords} onChange={this.handleChange}/>
             <button type="submit">Edit post</button>
         </form>
       </div>
