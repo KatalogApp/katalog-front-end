@@ -23,19 +23,23 @@ class EditPost extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: "",
       title: "",
-      description: "",
-      keywords: "", //  not sure
+      description : "",
+      theme: ""
+
     };
   }
 
   componentDidMount = async() => { 
     const { postId } = this.props.match.params;
+    // const {title, description, theme, keywords} = ; //
     try {
-      const post = await postClient.getSinglePost(postId);
+      // getPost(id)
+      const post = await postClient.getSinglePost({ postId});
       this.setState({
-        post
+       title: post.title,
+       description: post.description,
+       theme: post.theme
       })
     } catch(error) {
       console.log(error)
@@ -56,10 +60,11 @@ handleChange = event => {
   handleSubmit = async (event) => {
     console.log('On submit', this.state)
     event.preventDefault();
+    const { postId } = this.props.match.params;
     const keywords = await this.handleKeywordsChange();
     const { title, description, theme } = this.state;
     try {
-      await postClient.editPost({ title, description, keywords, theme });
+      await postClient.editPost({ title, description, keywords, theme }, postId);
     } catch(error){
         console.log(error)
     } finally {
@@ -70,6 +75,7 @@ handleChange = event => {
 
 
 render (props){
+      // const { title, description, theme } = this.state;
   return (
      <div>
         <form onSubmit={this.handleSubmit}>

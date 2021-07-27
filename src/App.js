@@ -28,9 +28,9 @@ class App extends Component {
 					<AnonRoute path="/login" component={Login} />
 					<PrivateRoute path="/private" component={Private} />
 					<PrivateRoute path="/posts/new" component={CreatePost}/>
+								<PrivateRoute path ="/user-profile/posts/edit/:postId" component={EditPost}/>
 					<PrivateRoute path ="/user-profile/posts/:postId" component={SinglePost}/>
 					<PrivateRoute path ="/user-profile" component={listOfPosts}/>
-					<PrivateRoute path ="/user-profile/posts/edit/:postId" component={EditPost}/>
 				</Switch>
 			</div>
 		);
