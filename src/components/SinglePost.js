@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import postClient from '../lib/postClient';
 
+
 class SinglePost extends Component {
   constructor(props){
     super(props);
@@ -33,7 +34,7 @@ class SinglePost extends Component {
   }
 
   render() {
-    const { post } = this.state;
+    const { post } = this.state; 
     return (
       <>
         <div>
@@ -42,6 +43,7 @@ class SinglePost extends Component {
           <p>Description: {post.description}</p>
           <button onClick={this.handleDelete}>Delete this post</button>
         </div>
+        
       </>
     );
   }

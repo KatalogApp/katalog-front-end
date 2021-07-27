@@ -11,6 +11,7 @@ import { withAuth } from './providers/AuthProvider';
 import listOfPosts from './components/listOfPosts';
 import SinglePost from './components/SinglePost';
 import CreatePost from './components/CreatePost';
+import EditPost from './components/EditPost';
 
 class App extends Component {
 	render() {
@@ -29,6 +30,7 @@ class App extends Component {
 					<PrivateRoute path="/posts/new" component={CreatePost}/>
 					<PrivateRoute path ="/user-profile/posts/:postId" component={SinglePost}/>
 					<PrivateRoute path ="/user-profile" component={listOfPosts}/>
+					<PrivateRoute path ="/user-profile/posts/edit/:postId" component={EditPost}/>
 				</Switch>
 			</div>
 		);
