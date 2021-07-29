@@ -46,7 +46,9 @@ class CreateNote extends Component {
             <option value="posts">{posts} onChange={this.handleChange}</option>
               </select> */}
             <button type="submit">Create note</button>
+           
         </form>
+
       </div>
     );
   }
