@@ -74,7 +74,7 @@ handleChange = event => {
   }
 
 render (props){
-  const { title, description, theme} = this.state;
+  const { title, description, theme, keywords} = this.state;
   return (
      <div>
         <h2>EDIT POST</h2>
@@ -87,8 +87,8 @@ render (props){
             <input type="text" name="theme" value={theme} onChange={this.handleChange}/>
             <label>Keywords</label>
             <p>Add keywords separated by commas</p>
-            <input type="text" name="keywordsString" value={this.keywords} onChange={this.handleChange}/>
-            <button type="submit">Edit post</button>
+            <input type="text" name="keywordsString" value={keywords} onChange={this.handleChange}/>
+            <button type="submit" >Edit post</button>
         </form>
       </div>
   );

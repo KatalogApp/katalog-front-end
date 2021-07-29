@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import postClient from '../lib/postClient';
 import PostCard from './postCard';
 
-class listOfPosts extends Component {
+class ListOfPosts extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -25,7 +25,7 @@ class listOfPosts extends Component {
   const { posts } = this.state;
     return (
       <>
-      <h1>List os posts</h1>
+      <h1>My Posts</h1>
       <ul>
       {posts.map(item => (
           <PostCard key={item._id} post={item} />
@@ -36,4 +36,4 @@ class listOfPosts extends Component {
   }
 }
 
-   export default listOfPosts;
+   export default ListOfPosts;
