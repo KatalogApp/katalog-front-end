@@ -14,7 +14,8 @@ import CreatePost from './components/CreatePost';
 import EditPost from './components/EditPost';
 import ListOfNotes from './components/listOfNotes';
 import EditNote from './components/EditNote';
-
+import CreateNote from './components/CreateNote';
+import SingleNote from './components/SingleNote';
 
 class App extends Component {
 	render() {
@@ -31,12 +32,13 @@ class App extends Component {
 					<AnonRoute path="/login" component={Login} />
 					<PrivateRoute path="/private" component={Private} />
 					<PrivateRoute path="/posts/new" component={CreatePost}/>
-					<PrivateRoute path ="/user-profile/posts/edit/:postId" component={EditPost}/>
-					<PrivateRoute path ="/user-profile/posts/:postId" component={SinglePost}/>
+					<PrivateRoute path ="/posts/edit/:postId" component={EditPost}/>
+					<PrivateRoute path ="/posts/:postId" component={SinglePost}/>
 					<PrivateRoute path ="/user-profile" component={ListOfPosts}/>
-					<PrivateRoute path ="/user-profile/notes/edit/:postId" component={EditNote}/>
-					<PrivateRoute path ="/user-profile/notes/:postId" component={SinglePost}/>
-					<PrivateRoute path ="/user-profile/notes" component={ListOfNotes}/>
+					<PrivateRoute path ="/notes/edit/:noteId" component={EditNote}/>
+					<PrivateRoute path ="/notes/:noteId" component={SingleNote}/>
+					<PrivateRoute path ="/note/create" component={CreateNote}/>
+					<PrivateRoute path ="/notes" component={ListOfNotes}/>
 				</Switch>
 			</div>
 		);

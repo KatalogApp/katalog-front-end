@@ -19,6 +19,8 @@ class Navbar extends Component {
 						<Link to="/signup">Signup</Link>
 						<Link to="/posts/new">Create post</Link>
 						<Link to="/user-profile/posts">Home</Link>
+						<Link to="/notes">Notes</Link>
+						<Link to="/note/create">Create note</Link>
 					</div>
 			</div>
 		);
