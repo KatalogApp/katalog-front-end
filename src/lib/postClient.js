@@ -18,8 +18,8 @@ class PostClient {
 
 	createPost(post) {
 		// This route is okay though I think the date was automatically filled by the backend (date.now()?) 
-		const { title, description, keywords, theme } = post;
-		return this.postClient.post('/user-profile/post/create', { title, description, keywords, theme }).then(({ data }) => data);
+		const { title, description, keywords, theme, imageUrl } = post;
+		return this.postClient.post('/user-profile/post/create', { title, description, keywords, theme, imageUrl }).then(({ data }) => data);
 	}
 
 	editPost(body, id) {
