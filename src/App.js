@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
+import './App.css';
 
 import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
