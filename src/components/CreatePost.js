@@ -43,14 +43,16 @@ class CreatePost extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
             <label>Title</label>
-            <input type="text" name="title" onChange={this.handleChange}/>
+                <input type="text" name="title" onChange={this.handleChange}/>
             <label>Description</label>
-            <input type="text" name="description" onChange={this.handleChange}/>
+                <input type="text" name="description" onChange={this.handleChange}/>
             <label>Theme</label>
-            <input type="text" name="theme" onChange={this.handleChange}/>
+                <input type="text" name="theme" onChange={this.handleChange}/>
             <label>Keywords</label>
             <p>Add keywords separated by commas</p>
-            <input type="text" name="keywordsString" onChange={this.handleChange}/>
+                <input type="text" name="keywordsString" onChange={this.handleChange}/>
+            <label for="image">Image:</label>
+                <input type="file" name="image" id="image" />
             <button type="submit">Create post</button>
         </form>
       </div>
