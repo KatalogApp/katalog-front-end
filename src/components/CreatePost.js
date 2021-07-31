@@ -51,7 +51,7 @@ class CreatePost extends Component {
             <label>Keywords</label>
             <p>Add keywords separated by commas</p>
                 <input type="text" name="keywordsString" onChange={this.handleChange}/>
-            <label for="imageUrl">Image:</label>
+            <label>Image:</label>
                 <input type="file" name="imageUrl" id="imageUrl" />
             <button type="submit">Create post</button>
         </form>
