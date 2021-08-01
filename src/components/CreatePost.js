@@ -40,19 +40,35 @@ class CreatePost extends Component {
   render() {
     // I render an empty form
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-            <label>Title</label>
-            <input type="text" name="title" onChange={this.handleChange}/>
-            <label>Description</label>
-            <input type="text" name="description" onChange={this.handleChange}/>
-            <label>Theme</label>
-            <input type="text" name="theme" onChange={this.handleChange}/>
-            <label>Keywords</label>
-            <p>Add keywords separated by commas</p>
-            <input type="text" name="keywordsString" onChange={this.handleChange}/>
-            <button type="submit">Create post</button>
-        </form>
+      <div className="main">
+      <h1>CREATE A POST BELOW</h1>
+        <div className="main__form-div">
+          <form onSubmit={this.handleSubmit}>
+            <ul className="main__form-ul">
+              <li className="main__form-row">
+                <label>Title</label>
+                <input type="text" name="title" onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-row">
+                <label>Description</label>
+                <input type="text" name="description" onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-row">
+                <label>Theme</label>
+                <input type="text" name="theme" onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-row">
+                <label>Keywords
+                  <p><em>Add keywords separated by commas</em></p>
+                </label>
+                <input type="text" name="keywordsString" placeholder="Add keywords separated by commas" onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-btn">
+                <button className="btn btn-cta" type="submit">Create post</button>
+              </li>
+            </ul>
+          </form>
+        </div>
       </div>
     );
   }

@@ -3,6 +3,8 @@ import postClient from '../lib/postClient';
 import PostCard from './postCard';
 import NavbarLoggedIn from './NavbarLoggedIn';
 
+import { withAuth } from '../providers/AuthProvider';
+
 class listOfPosts extends Component {
   constructor(props){
     super(props);
@@ -38,4 +40,4 @@ class listOfPosts extends Component {
   }
 }
 
-   export default listOfPosts;
+   export default withAuth(listOfPosts);
