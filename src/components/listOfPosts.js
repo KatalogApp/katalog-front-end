@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import postClient from '../lib/postClient';
 import PostCard from './postCard';
-import NavbarLoggedIn from './NavbarLoggedIn';
 
 import { withAuth } from '../providers/AuthProvider';
 
@@ -25,16 +24,16 @@ class listOfPosts extends Component {
   }
    
   render() {
+  const { user } = this.props;
   const { posts } = this.state;
     return (
       <>
-      <h1>List of posts</h1>
+      <h1>{user.name}&apos;s Posts</h1>
       <ul>
       {posts.map(item => (
           <PostCard key={item._id} post={item} />
       ))}
      </ul>
-     <NavbarLoggedIn />
      </>
     )
   }

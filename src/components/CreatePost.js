@@ -61,10 +61,10 @@ class CreatePost extends Component {
                 <label>Keywords
                   <p><em>Add keywords separated by commas</em></p>
                 </label>
-                <input type="text" name="keywordsString" placeholder="Add keywords separated by commas" onChange={this.handleChange}/>
+                <input type="text" name="keywordsString" onChange={this.handleChange}/>
               </li>
               <li className="main__form-btn">
-                <button className="btn btn-cta" type="submit">Create post</button>
+                <button className="btn" type="submit">Create post</button>
               </li>
             </ul>
           </form>

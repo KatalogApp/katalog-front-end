@@ -12,12 +12,11 @@ import { withAuth } from '../providers/AuthProvider';
 
 class Navbar extends Component {
 	render() {
-		const { user, isLoggedIn, isLoggedOut, logout } = this.props;
+		const { isLoggedIn, isLoggedOut, logout } = this.props;
 		return (
 			<div>
 				{isLoggedIn && (
 					<>
-						<p>Welcome {user.name}</p>
 						<nav className="nav">
 							<Link className="nav__link" to="/user-profile">
 								<span className="material-icons nav__icon"><HomeIcon /></span>
