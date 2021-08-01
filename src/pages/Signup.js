@@ -27,34 +27,51 @@ class Signup extends Component {
     const { name, email, password } = this.state;
     return (
       <div className="main">
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
-          />
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-          <input type="submit" value="Signup" />
-        </form>
-        <p>
-          Already have account?
-          <Link to={"/login"}> Login</Link>
-        </p>
+        <h1>K·A·T·A·L·O·G</h1>
+        <h3>Inspire yourself</h3>
+        <div className="main__form-div">
+          <form onSubmit={this.handleFormSubmit}>
+            <ul className="main__form-ul">
+              <li className="main__form-row">
+                <label>Username:</label>
+                <input
+                  className="main__form-row-input"
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={this.handleChange}
+                />
+              </li>
+              <li className="main__form-row">
+                <label>Email:</label>
+                <input
+                  className="main__form-row-input"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                />
+              </li>
+              <li className="main__form-row">
+                <label>Password:</label>
+                <input
+                  className="main__form-row-input"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                />
+              </li>
+              <li className="main__form-btn">
+                <input className="btn__cta btn" type="submit" value="Sign Up" />
+              </li>
+            </ul>
+          </form>
+          <p>
+            Already have account?
+            <span> <Link to={"/login"}>Login</Link></span>
+          </p>
+        </div>  
       </div>
     );
   }

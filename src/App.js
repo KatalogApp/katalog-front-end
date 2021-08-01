@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import './App.css';
 
 import Navbar from './components/Navbar';
+import TopBodyBar from './components/TopBodyBar';
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import Private from './pages/Private';
@@ -22,14 +23,14 @@ class App extends Component {
 		}
 		return (
 			<div className="container">
-				<h1>Basic React Authentication</h1>
+				<TopBodyBar />
 				<Navbar />
 				<Switch>
 					<AnonRoute path="/signup" component={Signup} />
 					<AnonRoute path="/login" component={Login} />
 					<PrivateRoute path="/private" component={Private} />
 					<PrivateRoute path="/posts/new" component={CreatePost}/>
-								<PrivateRoute path ="/user-profile/posts/edit/:postId" component={EditPost}/>
+					<PrivateRoute path ="/user-profile/posts/edit/:postId" component={EditPost}/>
 					<PrivateRoute path ="/user-profile/posts/:postId" component={SinglePost}/>
 					<PrivateRoute path ="/user-profile" component={listOfPosts}/>
 				</Switch>

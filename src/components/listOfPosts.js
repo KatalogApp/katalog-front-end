@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import postClient from '../lib/postClient';
 import PostCard from './postCard';
+import NavbarLoggedIn from './NavbarLoggedIn';
 
 class listOfPosts extends Component {
   constructor(props){
@@ -25,12 +26,13 @@ class listOfPosts extends Component {
   const { posts } = this.state;
     return (
       <>
-      <h1>List os posts</h1>
+      <h1>List of posts</h1>
       <ul>
       {posts.map(item => (
           <PostCard key={item._id} post={item} />
       ))}
      </ul>
+     <NavbarLoggedIn />
      </>
     )
   }

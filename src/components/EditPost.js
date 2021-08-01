@@ -28,7 +28,7 @@ class EditPost extends Component {
       theme: ""
     };
   }
-
+  
   componentDidMount = async() => { 
     const { postId } = this.props.match.params;
     // const {title, description, theme, keywords} = ; //
@@ -47,7 +47,7 @@ class EditPost extends Component {
     }
   };
 
-handleChange = event => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
     console.log(this.state)
@@ -73,26 +73,26 @@ handleChange = event => {
     }
   }
 
-render (props){
-  const { title, description, theme} = this.state;
-  return (
-     <div>
-        <h2>EDIT POST</h2>
-        <form onSubmit={this.handleSubmit}>
-            <label>Title</label>
-            <input type="text" name="title" value={title} onChange={this.handleChange}/>
-            <label>Description</label>
-            <input type="text" name="description" value={description} onChange={this.handleChange}/>
-            <label>Theme</label>
-            <input type="text" name="theme" value={theme} onChange={this.handleChange}/>
-            <label>Keywords</label>
-            <p>Add keywords separated by commas</p>
-            <input type="text" name="keywordsString" value={this.keywords} onChange={this.handleChange}/>
-            <button type="submit">Edit post</button>
-        </form>
-      </div>
-  );
-}
+  render (props){
+    const { title, description, theme} = this.state;
+    return (
+      <div>
+          <h2>EDIT POST</h2>
+          <form onSubmit={this.handleSubmit}>
+              <label>Title</label>
+              <input type="text" name="title" value={title} onChange={this.handleChange}/>
+              <label>Description</label>
+              <input type="text" name="description" value={description} onChange={this.handleChange}/>
+              <label>Theme</label>
+              <input type="text" name="theme" value={theme} onChange={this.handleChange}/>
+              <label>Keywords</label>
+              <p>Add keywords separated by commas</p>
+              <input type="text" name="keywordsString" value={this.keywords} onChange={this.handleChange}/>
+              <button type="submit">Edit post</button>
+          </form>
+        </div>
+    );
+  }
 };
  
 export default EditPost;

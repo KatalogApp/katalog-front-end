@@ -16,7 +16,6 @@ render (props){
       <p>creator: {this.props.post.creator}</p>
       <Link to={`/user-profile/posts/${this.props.post._id}`}>See post</Link>
       <Link to={`/user-profile/posts/edit/${this.props.post._id}`}>Edit post</Link>
-
     </div>
   );
 }
