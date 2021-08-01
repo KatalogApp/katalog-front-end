@@ -41,19 +41,19 @@ class CreatePost extends Component {
   };
  
   // this method submits the form
-  handleSubmit = e => {
-    e.preventDefault();
+  // handleSubmit = e => {
+  //   e.preventDefault();
  
-    service
-      .saveNewThing(this.state)
-      .then(res => {
-        console.log('added: ', res);
-        // here you would redirect to some other page
-      })
-      .catch(err => {
-        console.log('Error while adding the thing: ', err);
-      });
-  };
+  //   service
+  //     .saveNewImage(this.state.imageUrl)
+  //     .then(res => {
+  //       console.log('added: ', res);
+  //       // here you would redirect to some other page
+  //     })
+  //     .catch(err => {
+  //       console.log('Error while adding the file: ', err);
+  //     });
+  // };
 
   handleKeywordsChange = () => {
     const keywords = this.state.keywordsString.split(',');
@@ -63,9 +63,14 @@ class CreatePost extends Component {
   handleSubmit = async (event) => {
     console.log('On submit', this.state)
     event.preventDefault();
+    // service
+    //  .saveNewImage(this.state)
+
+    // I'm not sure where to add the saveNewImage function
     const keywords = await this.handleKeywordsChange();
-    const { title, description, theme, imageUrl } = this.state;
+    const { title, description, theme , imageUrl } = this.state;
     try {
+     
       await postClient.createPost({ title, description, keywords, theme, imageUrl });
     } catch(error){
         console.log(error)

@@ -21,10 +21,10 @@ export default {
       .catch(errorHandler);
   },
  
-  saveNewThing(newThing) {
+  saveNewImage(newImage) {
     // console.log('new thing is: ', newThing)
     return service
-      .post('/post/create', newThing)
+      .post('/post/create', newImage)
       .then(res => res.data)
       .catch(errorHandler);
   }
