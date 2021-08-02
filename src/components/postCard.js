@@ -14,8 +14,12 @@ render (props){
       </ul>
       <p>theme: {this.props.post.theme}</p>
       <p>creator: {this.props.post.creator}</p>
-      <Link to={`/user-profile/posts/${this.props.post._id}`}>See post</Link>
-      <Link to={`/user-profile/posts/edit/${this.props.post._id}`}>Edit post</Link>
+
+
+      <img src={this.props.post.imageUrl}/>
+      <Link to={`/posts/${this.props.post._id}`}>See post</Link>
+      <Link to={`/posts/edit/${this.props.post._id}`}>Edit post</Link>
+
     </div>
   );
 }

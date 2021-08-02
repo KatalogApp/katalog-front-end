@@ -4,7 +4,8 @@ import PostCard from './postCard';
 
 import { withAuth } from '../providers/AuthProvider';
 
-class listOfPosts extends Component {
+class ListOfPosts extends Component {
+
   constructor(props){
     super(props);
     this.state = {
@@ -29,6 +30,7 @@ class listOfPosts extends Component {
     return (
       <>
       <h1>{user.name}&apos;s Posts</h1>
+
       <ul>
       {posts.map(item => (
           <PostCard key={item._id} post={item} />
@@ -39,4 +41,6 @@ class listOfPosts extends Component {
   }
 }
 
-   export default withAuth(listOfPosts);
+
+   export default withAuth(ListOfPosts);
+

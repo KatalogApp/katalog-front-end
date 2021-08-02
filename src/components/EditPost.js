@@ -73,6 +73,7 @@ class EditPost extends Component {
     }
   }
 
+
   render (props){
     const { title, description, theme} = this.state;
     return (
@@ -93,12 +94,6 @@ class EditPost extends Component {
                   <label>Theme</label>
                   <input type="text" name="theme" value={theme} onChange={this.handleChange}/>
                 </li>
-                <li className="main__form-row">
-                  <label>Keywords
-                    <p><em>Add keywords separated by commas</em></p>
-                  </label>
-                  <input type="text" name="keywordsString" value={this.keywords} onChange={this.handleChange}/>
-                </li>
                 <li className="main__form-btn">
                   <button className="btn" type="submit">Edit post</button>
                 </li>
@@ -108,6 +103,7 @@ class EditPost extends Component {
         </div>
     );
   }
+
 };
  
 export default EditPost;

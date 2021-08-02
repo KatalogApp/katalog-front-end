@@ -41,9 +41,11 @@ class Navbar extends Component {
 						</nav>
 					</>
 				)}
+
 				{isLoggedOut && (
 					<StartScreen />
 					)}
+
 			</div>
 		);
 	}
