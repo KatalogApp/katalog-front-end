@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import postClient from '../lib/postClient';
 import PostCard from './postCard';
 
+import { withAuth } from '../providers/AuthProvider';
+
 class ListOfPosts extends Component {
+
   constructor(props){
     super(props);
     this.state = {
@@ -22,10 +25,12 @@ class ListOfPosts extends Component {
   }
    
   render() {
+  const { user } = this.props;
   const { posts } = this.state;
     return (
       <>
-      <h1>My Posts</h1>
+      <h1>{user.name}&apos;s Posts</h1>
+
       <ul>
       {posts.map(item => (
           <PostCard key={item._id} post={item} />
@@ -36,4 +41,6 @@ class ListOfPosts extends Component {
   }
 }
 
-   export default ListOfPosts;
+
+   export default withAuth(ListOfPosts);
+
