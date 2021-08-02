@@ -106,6 +106,10 @@ class CreatePost extends Component {
                 </label>
                 <input type="text" name="keywordsString" onChange={this.handleChange}/>
               </li>
+              <li className="main__form-row">
+                <label>Image:</label>
+                <input type="file" onChange={e => this.handleFileUpload(e)} />
+              </li>
               <li className="main__form-btn">
                 <button className="btn" type="submit">Create post</button>
               </li>

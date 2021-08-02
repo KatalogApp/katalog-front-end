@@ -18,19 +18,19 @@ class Navbar extends Component {
 				{isLoggedIn && (
 					<>
 						<nav className="nav">
-							<Link className="nav__link" to="/user-profile">
+							<Link className="nav__link" to= {`/user-profile`}>
 								<span className="material-icons nav__icon"><HomeIcon /></span>
 								<span className="nav__text">Home</span>
 							</Link>
-							<Link className="nav__link" to="/user-profile/edit">
+							<Link className="nav__link" to= {`/user-profile/edit`}>
 								<span className="material-icons nav__icon"><SettingsIcon /></span>
 								<span className="nav__text">Edit profile</span>
 							</Link>
-							<Link className="nav__link" to="/posts/new">
+							<Link className="nav__link" to={`/posts/new`}>
 								<span className="material-icons nav__icon"><AddIcon /></span>
 								<span className="nav__text">Create post</span>
 							</Link>
-							<Link className="nav__link" to="/notes/new">
+							<Link className="nav__link" to={`/notes/new`}>
 								<span className="material-icons nav__icon"><AddNoteIcon /></span>
 								<span className="nav__text">Create note</span>
 							</Link>
