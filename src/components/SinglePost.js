@@ -39,9 +39,7 @@ class SinglePost extends Component {
       <>
         <div>
           <h1>{post.title}</h1>
-          <p>Theme: {post.theme}</p>
-          <p>Description: {post.description}</p>
-          <p>{post.imageUrl}</p>
+          <p>Are you sure you want to delete this post?!?!</p>
           <button onClick={this.handleDelete}>Delete this post</button>
         </div>
         

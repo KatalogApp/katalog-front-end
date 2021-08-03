@@ -17,10 +17,12 @@ render (props){
           <li>{this.props.post.keywords}</li>
         </ul>
         <p><em>{this.props.post.theme}</em></p>
-        <p>Created: {this.props.post.date}</p>
+        <p>{this.props.post.date}</p>
         <p className="card-display">creator: {this.props.post.creator}</p>
-      <Link className="card-btn" to={`/posts/${this.props.post._id}`}>Delete Post</Link>
-      <Link to={`/posts/edit/${this.props.post._id}`}>Edit Post</Link>
+        <div className="card-button-div">
+        <Link className="card-btn btn__cta" to={`/posts/edit/${this.props.post._id}`}>Edit Post</Link>
+        <Link className="card-btn" to={`/posts/${this.props.post._id}`}>Delete Post</Link>
+        </div>
       </div>
     </div>
     </li>
