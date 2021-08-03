@@ -24,7 +24,7 @@ export default {
   saveNewImage(newImage) {
     // console.log('new thing is: ', newThing)
     return service
-      .post('/post/create', newImage)
+      .post('/posts/new', newImage)
       .then(res => res.data)
       .catch(errorHandler);
   }

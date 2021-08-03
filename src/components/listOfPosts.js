@@ -29,6 +29,7 @@ class ListOfPosts extends Component {
   const { posts } = this.state;
     return (
       <>
+      <br></br>
       <h1>{user.name}&apos;s Posts</h1>
 
       <ul>
