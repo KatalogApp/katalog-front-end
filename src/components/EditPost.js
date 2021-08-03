@@ -53,19 +53,19 @@ class EditPost extends Component {
     console.log(this.state)
   };
 
-  handleKeywordsChange = () => {
-    const keywords = this.state.keywordsString.split(',');
-    return keywords;
-  }
+  // handleKeywordsChange = () => {
+  //   const keywords = this.state.keywordsString.split(',');
+  //   return keywords;
+  // }
 
   handleSubmit = async (event) => {
     console.log('On submit', this.state)
     event.preventDefault();
     const { postId } = this.props.match.params;
-    const keywords = await this.handleKeywordsChange();
+    // const keywords = await this.handleKeywordsChange();
     const { title, description, theme } = this.state;
     try {
-      await postClient.editPost({ title, description, keywords, theme }, postId);
+      await postClient.editPost({ title, description, theme }, postId);
     } catch(error){
         console.log(error)
     } finally {

@@ -7,6 +7,12 @@
   margin: auto;
 }
 
+.card-container {
+  width: 90%;
+  margin: auto;
+  padding: 2%;
+}
+
 /* Add rounded corners to the top left and the top right corner of the image */
 .card-img {
   border-radius: 5px 5px 0 0;
@@ -18,4 +24,18 @@
 .card-ul {
   list-style-type: none;
   padding: 0;
+}
+
+.card-display {
+  display: none;
+}
+
+.card-btn {
+  background-color: rgb(117, 173, 241);
+  color: white;
+  border-radius: 50px;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
