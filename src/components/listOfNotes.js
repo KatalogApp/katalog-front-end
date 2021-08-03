@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import noteClient from '../lib/noteClient';
 import NoteCard from './noteCard';
+import { Link } from 'react-router-dom';
 
 class ListOfNotes extends Component {
   constructor(props){
@@ -25,13 +26,17 @@ class ListOfNotes extends Component {
   const { notes } = this.state;
     return (
       <>
+      
       <h1>My Notes</h1>
       <ul>
       {notes.map(item => (
           <NoteCard key={item._id} note={item} />
       ))}
+       <Link to={`/note/create`}>Create Note</Link>
      </ul>
+     
      </>
+     
     )
   }
 }

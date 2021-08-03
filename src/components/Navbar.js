@@ -30,9 +30,9 @@ class Navbar extends Component {
 								<span className="material-icons nav__icon"><AddIcon /></span>
 								<span className="nav__text">Create post</span>
 							</Link>
-							<Link className="nav__link" to={`/notes/new`}>
+							<Link className="nav__link" to={`/notes`}>
 								<span className="material-icons nav__icon"><AddNoteIcon /></span>
-								<span className="nav__text">Create note</span>
+								<span className="nav__text">Notes</span>
 							</Link>
 							<Link onClick={logout} className="nav__link">
 								<span className="material-icons nav__icon"><CloseIcon /></span>

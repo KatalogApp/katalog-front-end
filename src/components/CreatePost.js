@@ -63,8 +63,8 @@ class CreatePost extends Component {
   handleSubmit = async (event) => {
     console.log('On submit', this.state)
     event.preventDefault();
-    // service
-    //  .saveNewImage(this.state)
+    service
+    .saveNewImage(this.state)
 
     // I'm not sure where to add the saveNewImage function
     const keywords = await this.handleKeywordsChange();

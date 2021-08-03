@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import noteClient from '../lib/noteClient';
-// import postClient from '../lib/postClient';
+
 
 class CreateNote extends Component {
   constructor(props){
@@ -32,24 +32,27 @@ class CreateNote extends Component {
   }
 
   render() {
-    // const {posts} = postClient.getPosts();
-    // I render an empty form
+   
     return (
-      <div>
+      <div className="main">
+      <h1>CREATE A NOTE BELOW</h1>
+      <div className="main__form-div">
         <form onSubmit={this.handleSubmit}>
+        <ul className="main__form-ul">
+        <li className="main__form-row">
             <label>Title</label>
             <input type="text" name="title" onChange={this.handleChange}/>
+        </li>
+        <li className="main__form-row">
             <label>Description</label>
             <input type="text" name="content" onChange={this.handleChange}/>
-            <label>Choose posts:</label>
-            {/* <select name="posts" id="posts" multiple>
-            <option value="posts">{posts} onChange={this.handleChange}</option>
-              </select> */}
+        </li>
             <button type="submit">Create note</button>
-           
+           </ul>
         </form>
+        </div>
+    </div>
 
-      </div>
     );
   }
 }

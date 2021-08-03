@@ -9,7 +9,6 @@ class EditNote extends Component {
     this.state = {
       title: "",
       content : "",
-      posts: "",
     };
   }
 
@@ -22,7 +21,7 @@ class EditNote extends Component {
       this.setState({
        title: note.title,
        content: note.content,
-       posts: note.posts
+  
       })
     } catch(error) {
       console.log(error)
@@ -42,18 +41,18 @@ handleChange = event => {
     console.log('On submit', this.state)
     event.preventDefault();
     const { noteId } = this.props.match.params;
-    const { title, content, posts } = this.state;
+    const { title, content } = this.state;
     try {
-      await noteClient.editNote({ title, content, posts }, noteId);
+      await noteClient.editNote({ title, content }, noteId);
     } catch(error){
         console.log(error)
     } finally {
-        this.props.history.push('/user-profile')
+        this.props.history.push('/notes')
     }
   }
 
 render (props){
-  const { title, content, posts} = this.state;
+  const { title, content} = this.state;
   return (
      <div>
         <h2>EDIT NOTE</h2>
@@ -62,8 +61,6 @@ render (props){
             <input type="text" name="title" value={title} onChange={this.handleChange}/>
             <label>Content</label>
             <input type="text" name="description" value={content} onChange={this.handleChange}/>
-            <label>Posts</label>
-            <input type="text" name="keywordsString" value={posts} onChange={this.handleChange}/>
             <button type="submit" >Edit note</button>
         </form>
       </div>
