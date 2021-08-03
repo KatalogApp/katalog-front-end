@@ -32,9 +32,9 @@ class ListOfPosts extends Component {
       <br></br>
       <h1>{user.name}&apos;s Posts</h1>
 
-      <ul>
+      <ul className="card-ul">
       {posts.map(item => (
-          <PostCard key={item._id} post={item} />
+          <PostCard className="list-item" key={item._id} post={item} />
       ))}
      </ul>
      </>
