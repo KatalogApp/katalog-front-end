@@ -27,7 +27,7 @@ class App extends Component {
 			return <div>loading ... </div>;
 		}
 		return (
-			<div className="container">
+			<>
 				<TopBodyBar />
 				<Navbar />
 				<Switch>
@@ -44,7 +44,7 @@ class App extends Component {
 					<PrivateRoute path ="/note/create" component={CreateNote}/>
 					<PrivateRoute path ="/notes" component={ListOfNotes}/>
 				</Switch>
-			</div>
+			</>
 		);
 	}
 }

@@ -14,9 +14,8 @@ class Navbar extends Component {
 	render() {
 		const { isLoggedIn, isLoggedOut, logout } = this.props;
 		return (
-			<div>
+			<>	
 				{isLoggedIn && (
-					<>
 						<nav className="nav">
 							<Link className="nav__link" to={`/user-profile`}>
 								<span className="material-icons nav__icon"><HomeIcon /></span>
@@ -39,14 +38,11 @@ class Navbar extends Component {
 								<span className="nav__text">Logout</span>
 							</Link>
 						</nav>
-					</>
 				)}
-
 				{isLoggedOut && (
 					<StartScreen />
 					)}
-
-			</div>
+			</>
 		);
 	}
 }

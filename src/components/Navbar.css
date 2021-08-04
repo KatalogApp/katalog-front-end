@@ -9,6 +9,7 @@
   background-color: #FFF;
   display: flex;
   overflow-x: auto;
+  margin-top: 50px;
 }
 
 .nav__link {

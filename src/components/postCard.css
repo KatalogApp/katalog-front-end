@@ -11,12 +11,14 @@
   width: 90%;
   margin: auto;
   padding: 2%;
+  margin: 5% 0;
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
 .card-img {
   border-radius: 5px 5px 0 0;
-  width: 300px;
+  width: 80%;
+  height: 80%;
   object-fit: cover; 
   object-position: 100% 0;
 }

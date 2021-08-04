@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import postClient from '../lib/postClient';
 import PostCard from './postCard';
+import '../App.css';
 
 import { withAuth } from '../providers/AuthProvider';
 
@@ -44,7 +45,7 @@ class ListOfPosts extends Component {
   const { user } = this.props;
   const { posts } = this.state;
     return (
-      <>
+      <div className="postlist-main">
       <br></br>
       <h1>{user.name}&apos;s Posts</h1>
       {posts.length === 0 ? <p>Start creating posts and inspiring yourself</p> : (
@@ -53,9 +54,8 @@ class ListOfPosts extends Component {
           <PostCard className="list-item" key={item._id} post={item} onDelete={(e, id) => this.handleDelete(e, id)}/>
       ))}
      </ul>
-
       )}
-     </>
+      </div>
     )
   }
 }
