@@ -24,9 +24,9 @@ class PostClient {
 
 	editPost(body, id) {
 		// Here editPost will have to bring both editPost(body,id) so that you can pass the id to the backend params
-    const { title, date, description, keywords, theme, creator } = body;
+    const { title, description, keywords, theme } = body;
 		// Right now this id is not coming from anywhere
-		return this.postClient.post(`/user-profile/${id}/edit`, {title, date, description, keywords, theme, creator, id}).then(response => response.data);
+		return this.postClient.post(`/user-profile/${id}/edit`, {title, description, keywords, theme}).then(response => response.data);
 	}
 
   deletePost(id){

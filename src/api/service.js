@@ -21,11 +21,11 @@ export default {
       .catch(errorHandler);
   },
  
-  saveNewImage(newImage) {
-    // console.log('new thing is: ', newThing)
-    return service
-      .post('/posts/new', newImage)
-      .then(res => res.data)
-      .catch(errorHandler);
-  }
+  // saveNewImage(newImage) {
+  //   // console.log('new thing is: ', newThing)
+  //   return service
+  //     .post('/posts/new', newImage)
+  //     .then(res => res.data)
+  //     .catch(errorHandler);
+  // }
 };

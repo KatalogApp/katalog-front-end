@@ -17,22 +17,16 @@ class CreatePost extends Component {
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-    console.log(this.state)
+    // console.log(this.state)
   };
 
   handleFileUpload = async(e) => {
     console.log('The file to be uploaded is: ', e.target.files[0]);
- 
     const uploadData = new FormData();
-    // imageUrl => this name has to be the same as in the model since we pass
-    // req.body to .create() method when creating a new thing in '/api/things/create' POST route
     uploadData.append('imageUrl', e.target.files[0]);
- 
-   await service
+    await service
       .handleUpload(uploadData)
       .then(response => {
-        // console.log('response is: ', response);
-        // after the console.log we can see that response carries 'secure_url' which we can use to update the state
         this.setState({ imageUrl: response.secure_url });
       })
       .then((data) => {
@@ -43,24 +37,13 @@ class CreatePost extends Component {
       });
   };
 
-
-  handleKeywordsChange = () => {
-    const keywords = this.state.keywordsString.split(',');
-    return keywords;
-  }
-
   handleSubmit = async (event) => {
     console.log('On submit', this.state)
     event.preventDefault();
-    service
-    .saveNewImage(this.state)
-
-    // I'm not sure where to add the saveNewImage function
-    const keywords = await this.handleKeywordsChange();
-    const { title, description, theme , imageUrl } = this.state;
+    const { title, description, theme , imageUrl, keywordsString } = this.state;
     try {
-     
-      await postClient.createPost({ title, description, keywords, theme, imageUrl });
+      const createdPost = await postClient.createPost({ title, description, keywords: keywordsString.split(','), theme, imageUrl });
+      console.log(createdPost);
     } catch(error){
         console.log(error)
     } finally {
@@ -69,9 +52,7 @@ class CreatePost extends Component {
   }
 
   render() {
-    // I render an empty form
     return (
-
       <div className="main">
       <h1>CREATE A POST BELOW</h1>
         <div className="main__form-div">

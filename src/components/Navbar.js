@@ -18,11 +18,11 @@ class Navbar extends Component {
 				{isLoggedIn && (
 					<>
 						<nav className="nav">
-							<Link className="nav__link" to= {`/user-profile`}>
+							<Link className="nav__link" to={`/user-profile`}>
 								<span className="material-icons nav__icon"><HomeIcon /></span>
 								<span className="nav__text">Home</span>
 							</Link>
-							<Link className="nav__link" to= {`/user-profile/edit`}>
+							<Link className="nav__link" to={`/user-profile/edit`}>
 								<span className="material-icons nav__icon"><SettingsIcon /></span>
 								<span className="nav__text">Edit profile</span>
 							</Link>
