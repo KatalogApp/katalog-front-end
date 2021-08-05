@@ -34,16 +34,12 @@ Katalog is for the everyday artist that wants to organize their inspirations, wh
 ​
 **Post-Delete** - As a user I want to be able to see my profile and edit my name. 
 ​
-**Note - Create** - As a user I can create a note and relate multiple posts to it. 
-​
 **Note-Update** - As a user I can update a note and remove or add new posts associated to it.  
 ​
 **Note-Delete** - As a user I want to be able to see my profile and edit my name. 
 ​
 ## BACKLOG
-**404** - To personalize the 404 page, the user is offered similar posts as recommended
-pages rather than a general redirection to home page. The posts will be a GET request for posts of the same theme. 
-​
+
 **Log Out** If the page is a configurations page, I will be prompted to save changes before logging out. 
 ​
 **Geo Location** User can insert location of the post 
@@ -76,8 +72,8 @@ pages rather than a general redirection to home page. The posts will be a GET re
 | Update Post         | POST   | /[PostId]/edit                       | User can edit the name and theme of a post                                  | { name, theme, photo, date }                      |            |
 | Delete Post   | POST    | /[PostId]/edit                           | User can delete a post                       |                                       |  |
 |**Note CRUD**           |     |                            | |                                       |                 |
-| Create Note    | GET   | /create_note                        | User creates a post and is redirected to homepage                          | { content,articles, date }                                   |              |
-| Update Note         | POST   |/[NoteId]/edit                       | User can edit the content of a note and its related posts                    |    { content, articles, date }        |
+| Create Note    | GET   | /create_note                        | User creates a note and is redirected to homepage                          | { content, date }                                   |              |
+| Update Note         | POST   |/[NoteId]/edit                       | User can edit the content of a note                   |    { content, articles, date }        |
 | Delete Note   | POST    | /[NoteId]/edit                             | User can delete a note                      |                               { content, articles, date }        |  |
 ​
 ​
@@ -111,7 +107,7 @@ Note model
 {
     date: date,
    contet: string,
-   posts: [type: Schema.Types.ObjectId]
+
 }
 ```
 ​
@@ -128,11 +124,8 @@ Note model
 ​
 ### Project kanban
 - [Github projects]()
-​
-### Wireframes 
-​
 
 ​
 ### Slides
 ​
-- [Slides]()
+https://slides.com/lindavilla/deck/fullscreen
