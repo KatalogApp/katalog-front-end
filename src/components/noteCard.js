@@ -6,17 +6,19 @@ class NoteCard extends Component {
 render (props){
     
   return (
-    <div>
-      <h2>{this.props.note.title}</h2>
-      <p>Content: {this.props.note.content}</p>
-      <p>Date: {this.props.note.date.substr(0, 10)}</p>
-      {/* <ul>
-        <li>{this.props.note.post.title}</li>
-      </ul> */}
-      <Link to={`/notes/${this.props.note._id}`}>See Note</Link>
-      <Link to={`/notes/edit/${this.props.note._id}`}>Edit Note</Link>
-
-    </div>
+    <li>
+      <div className="card">
+        <div className="card-container">
+          <h3 id="start-h3">{this.props.note.title}</h3>
+          <p>Content: {this.props.note.content}</p>
+          <p>Date: {this.props.note.date.substr(0, 10)}</p>
+          <div className="card-button-div">
+            <Link className="card-btn btn__cta" to={`/notes/edit/${this.props.note._id}`}>Edit Note</Link>
+            <Link className="card-btn" to={`/notes/${this.props.note._id}`}>Delete Note</Link>
+          </div>
+        </div>
+      </div>
+    </li>
   );
 }
 };

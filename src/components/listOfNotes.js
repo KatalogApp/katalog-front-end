@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import noteClient from '../lib/noteClient';
 import NoteCard from './noteCard';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
 class ListOfNotes extends Component {
   constructor(props){
@@ -25,18 +26,17 @@ class ListOfNotes extends Component {
   render() {
   const { notes } = this.state;
     return (
-      <>
-      
-      <h1>My Notes</h1>
-      <ul>
-      {notes.map(item => (
-          <NoteCard key={item._id} note={item} />
-      ))}
-       <Link to={`/note/create`}>Create Note</Link>
-     </ul>
-     
-     </>
-     
+      <div className="postlist-main">
+        <h1>My Notes</h1>
+        <ul className="card-ul">
+        {notes.map(item => (
+            <NoteCard key={item._id} note={item} />
+        ))}
+        </ul>
+        <div className="center-btn">
+          <Link className="btn" to={`/note/create`}>Create Note</Link>
+        </div>
+      </div> 
     )
   }
 }

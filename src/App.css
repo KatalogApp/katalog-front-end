@@ -80,6 +80,7 @@ h3 {
   padding: 15px 40px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn__cta {
@@ -115,4 +116,9 @@ h3 {
 .postlist-main {
   padding-bottom: 50px;
   width: 100%;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
 }

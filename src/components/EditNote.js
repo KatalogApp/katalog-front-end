@@ -54,15 +54,25 @@ handleChange = event => {
 render (props){
   const { title, content} = this.state;
   return (
-     <div>
-        <h2>EDIT NOTE</h2>
-        <form onSubmit={this.handleSubmit}>
-            <label>Title</label>
-            <input type="text" name="title" value={title} onChange={this.handleChange}/>
-            <label>Content</label>
-            <input type="text" name="description" value={content} onChange={this.handleChange}/>
-            <button type="submit" >Edit note</button>
-        </form>
+     <div className="main">
+        <h1>EDIT NOTE</h1>
+        <div className="main__form-div">
+          <form onSubmit={this.handleSubmit}>
+            <ul className="main__form-ul">
+              <li className="main__form-row">
+                <label>Title</label>
+                <input type="text" name="title" value={title} onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-row">
+                <label>Content</label>
+                <input type="text" name="description" value={content} onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-btn">
+                  <button className="btn" type="submit" >Edit note</button>
+              </li>
+            </ul>
+          </form>
+        </div>
       </div>
   );
 }

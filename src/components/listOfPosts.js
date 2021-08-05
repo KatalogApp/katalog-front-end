@@ -46,15 +46,15 @@ class ListOfPosts extends Component {
   const { posts } = this.state;
     return (
       <div className="postlist-main">
-      <br></br>
-      <h1>{user.name}&apos;s Posts</h1>
-      {posts.length === 0 ? <p>Start creating posts and inspiring yourself</p> : (
-      <ul className="card-ul">
-      {posts.map(item => (
-          <PostCard className="list-item" key={item._id} post={item} onDelete={(e, id) => this.handleDelete(e, id)}/>
-      ))}
-     </ul>
-      )}
+        <br></br>
+        <h1>{user.name}&apos;s Posts</h1>
+        {posts.length === 0 ? <p>Start creating posts and inspiring yourself</p> : (
+        <ul className="card-ul">
+        {posts.map(item => (
+            <PostCard className="list-item" key={item._id} post={item} onDelete={(e, id) => this.handleDelete(e, id)}/>
+        ))}
+        </ul>
+        )}
       </div>
     )
   }

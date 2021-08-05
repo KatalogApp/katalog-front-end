@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
-import SettingsIcon from '@material-ui/icons/Settings';
+// import SettingsIcon from '@material-ui/icons/Settings';
 import AddIcon from '@material-ui/icons/Add'
 import AddNoteIcon from '@material-ui/icons/NoteAdd';
 import CloseIcon from '@material-ui/icons/Close'
@@ -21,10 +21,12 @@ class Navbar extends Component {
 								<span className="material-icons nav__icon"><HomeIcon /></span>
 								<span className="nav__text">Home</span>
 							</Link>
+							{/*
 							<Link className="nav__link" to={`/user-profile/edit`}>
 								<span className="material-icons nav__icon"><SettingsIcon /></span>
 								<span className="nav__text">Edit profile</span>
 							</Link>
+							*/}
 							<Link className="nav__link" to={`/posts/new`}>
 								<span className="material-icons nav__icon"><AddIcon /></span>
 								<span className="nav__text">Create post</span>

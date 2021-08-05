@@ -27,7 +27,7 @@ class CreateNote extends Component {
     } catch(error){
         console.log(error)
     } finally {
-        this.props.history.push('/user-profile')
+        this.props.history.push('/notes')
     }
   }
 
@@ -35,24 +35,25 @@ class CreateNote extends Component {
    
     return (
       <div className="main">
-      <h1>CREATE A NOTE BELOW</h1>
-      <div className="main__form-div">
-        <form onSubmit={this.handleSubmit}>
-        <ul className="main__form-ul">
-        <li className="main__form-row">
-            <label>Title</label>
-            <input type="text" name="title" onChange={this.handleChange}/>
-        </li>
-        <li className="main__form-row">
-            <label>Description</label>
-            <input type="text" name="content" onChange={this.handleChange}/>
-        </li>
-            <button type="submit">Create note</button>
-           </ul>
-        </form>
+        <h1>CREATE A NOTE BELOW</h1>
+        <div className="main__form-div">
+          <form onSubmit={this.handleSubmit}>
+            <ul className="main__form-ul">
+              <li className="main__form-row">
+                <label>Title</label>
+                <input type="text" name="title" onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-row">
+                <label>Description</label>
+                <input type="text" name="content" onChange={this.handleChange}/>
+              </li>
+              <li className="main__form-btn">
+                <button className="btn" type="submit">Create note</button>
+              </li>
+            </ul>
+          </form>
         </div>
-    </div>
-
+      </div>
     );
   }
 }

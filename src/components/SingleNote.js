@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import postClient from '../lib/postClient';
 import noteClient from '../lib/noteClient';
 
 
@@ -30,18 +29,16 @@ class SingleNote extends Component {
     } catch(error) {
       console.log(error)
     } finally {
-      this.props.history.push('/user-profile')
+      this.props.history.push('/notes')
     }
   }
 
   render() {
-    const { note } = this.state; 
+    // const { note } = this.state; 
     return (
       <>
         <div>
-          <h1>{note.title}</h1>
-          <p>Content: {note.content}</p>
-      
+          <h1>Are you sure you want to delete this note?</h1>
           <button onClick={this.handleDelete}>Delete this note</button>
         </div>
         
