@@ -59,12 +59,16 @@ class CreatePost extends Component {
           <form onSubmit={this.handleSubmit}>
             <ul className="main__form-ul">
               <li className="main__form-row">
+                <label>Image:</label>
+                <input type="file" onChange={e => this.handleFileUpload(e)} />
+              </li>
+              <li className="main__form-row">
                 <label>Title</label>
                 <input type="text" name="title" onChange={this.handleChange}/>
               </li>
               <li className="main__form-row">
                 <label>Description</label>
-                <input type="text" name="description" onChange={this.handleChange}/>
+                <textarea type="text" name="description" onChange={this.handleChange}/>
               </li>
               <li className="main__form-row">
                 <label>Theme</label>
@@ -74,11 +78,7 @@ class CreatePost extends Component {
                 <label>Keywords
                   <p><em>Add keywords separated by commas</em></p>
                 </label>
-                <input type="text" name="keywordsString" onChange={this.handleChange}/>
-              </li>
-              <li className="main__form-row">
-                <label>Image:</label>
-                <input type="file" onChange={e => this.handleFileUpload(e)} />
+                <textarea type="text" name="keywordsString" onChange={this.handleChange}/>
               </li>
               <li className="main__form-btn">
                 <button className="btn" type="submit">Create post</button>

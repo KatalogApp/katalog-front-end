@@ -45,7 +45,7 @@ class CreateNote extends Component {
               </li>
               <li className="main__form-row">
                 <label>Description</label>
-                <input type="text" name="content" onChange={this.handleChange}/>
+                <textarea className="main__form-textarea-large" type="text" name="content" onChange={this.handleChange}/>
               </li>
               <li className="main__form-btn">
                 <button className="btn" type="submit">Create note</button>
